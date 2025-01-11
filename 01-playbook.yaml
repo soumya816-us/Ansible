@@ -2,4 +2,4 @@
   hosts: web
   tasks: #task modules
   - name: ping the server
-    ansible.bultin.ping: 
+    
