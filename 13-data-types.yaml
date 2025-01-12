@@ -1,16 +1,16 @@
 - name: DevOps course information
   hosts: local
   connection: local
-  vars:
+  vars: #map
     course_name: "DevOps with AWS" #string
     duration: 120 #number..
-    topics: #list
+    topics: #list [] sym indicates list
     - linux
     - shell
     - ansible
     - aws
     live: true #boolean
-    tools: #map
+    tools: #map..sym {} indicates map
       ci: jenkins
       cloud: aws
       containerization: docker
