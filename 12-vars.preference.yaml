@@ -21,8 +21,9 @@
       #1.command line or args 
       #2.task level
       #3.files
-      #4.play variables or global variables
-      #5.vars from prompt 
+      #4.vars from prompt
+      #5.play variables or global variables
+      #6.vars from inventory
 
      
 
