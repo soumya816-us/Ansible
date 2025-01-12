@@ -10,6 +10,6 @@
     when: my_number > 10
   
   - name: print if number lessthan or equal to 10
-      ansible.builtin.debug:
+    ansible.builtin.debug:
         msg: "Given number {{ my_number }} is lessthan or equal to 10"
-      when: my_number <= 10
+    when: my_number <= 10
