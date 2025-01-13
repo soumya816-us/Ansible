@@ -42,9 +42,9 @@
     ansible.builtin.debug:
       msg: "Hello {{ name | upper }}"
 
-  - name: convert upper to upper
+  - name: Min and Max
     vars:
-      numbers: [1,4,46,112,745,999,46879]
+      number: [1,4,46,112,745,999,46879]
     ansible.builtin.debug:
       msg: "Minimum is {{ number | min }} , Maximum is {{ number | max }}"
 
