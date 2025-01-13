@@ -44,7 +44,7 @@
 
   - name: convert upper to upper
     vars:
-      numbers: [1 4 6 12 45 999 46879]
+      numbers: [1,4,46,112,745,999,46879]
     ansible.builtin.debug:
       msg: "Minimum is {{ number | min }} , Maximum is {{ number | max }}"
-      
+
