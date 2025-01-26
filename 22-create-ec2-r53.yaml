@@ -29,23 +29,23 @@
       loop: "{{ instances }}"
       register: ec2_info
 
-    # - name: print ec2_info
-    #   ansible.builtin.debug:
-    #     msg: "{{ ec2_info }}"
-
-    - name: print private IP addresses
+    - name: print ec2_info
       ansible.builtin.debug:
-        mgs: "{{ item.instances[0].private_ip_address }}"
-      loop: "{{ ec2_info.results }}"
+        msg: "{{ ec2_info }}"
 
-    - name: create private ip r53 records
-      amazon.aws.route53:
-        state: present
-        zone: "{{ zone }}"
-        record: "{{ item.item }}.{{ zone }}"
-        type: A
-        ttl: 1
-        value: "{{ item.instances[0].private_ip_address }}"
-        wait: true
-        overwrite: true
-      loop: "{{ ec2_info.results }}"
+    # - name: print private IP addresses
+    #   ansible.builtin.debug:
+    #     mgs: "{{ item.instances[0].private_ip_address }}"
+    #   loop: "{{ ec2_info.results }}"
+
+    # - name: create private ip r53 records
+    #   amazon.aws.route53:
+    #     state: present
+    #     zone: "{{ zone }}"
+    #     record: "{{ item.item }}.{{ zone }}"
+    #     type: A
+    #     ttl: 1
+    #     value: "{{ item.instances[0].private_ip_address }}"
+    #     wait: true
+    #     overwrite: true
+    #   loop: "{{ ec2_info.results }}"
