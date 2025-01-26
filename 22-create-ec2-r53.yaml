@@ -33,10 +33,10 @@
       ansible.builtin.debug:
         msg: "{{ ec2_info }}"
 
-    # - name: print private IP addresses
-    #   ansible.builtin.debug:
-    #     mgs: "{{ item.instances[0].private_ip_address }}"
-    #   loop: "{{ ec2_info.results }}"
+    - name: print private IP addresses
+      ansible.builtin.debug:
+        mgs: "{{ item.instances[0].private_ip_address }}"
+      loop: "{{ ec2_info.results }}"
 
     # - name: create private ip r53 records
     #   amazon.aws.route53:
